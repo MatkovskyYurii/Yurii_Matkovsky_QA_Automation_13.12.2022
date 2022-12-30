@@ -101,10 +101,53 @@ public class Lesson4 {
 //        // якщо нам треба число int то ми кастуємо так
 //        System.out.println((int) (Math.random()*11)); // якщо буде без дужок він візьме з рандома 0.99999 тільки 0
 
-        int min = 15 ;
-        int max = 30 ;
-        //from 15 to 30 ; 15 + int (0.9999 * (30-15+1)) = Random
-        System.out.println(min + (int) (Math.random()*(max-min+1)));
+//        int min = 15 ;
+//        int max = 30 ;
+//        //from 15 to 30 ; 15 + int (0.9999 * (30-15+1)) = Random
+//        System.out.println(min + (int) (Math.random()*(max-min+1)));
+
+
+        //Task 1
+//        Дано: зарплати трьох працівників за 1 місяць (a, b, c)
+//        Розрахувати:
+//        1. для кожного працівника суму зарплати за 10 років
+//        2. відняти 5% податок
+//        3. порахувати середнє арифметичне за трьома сумами за 10 років
+//        4. вивести суми зарплат за 10 років з урахуванням вирахування податків та
+//        середнє арифм.
+
+        int junior = 500 ;
+        int middle = 1500 ;
+        int senior = 3500 ;
+        int countFactorYears = 10 * 12;
+
+        // 1. Зарпалата за 10 років
+        int juniorsumm10 = junior * countFactorYears;
+        int middlesumm10 = middle * countFactorYears;
+        int seniorsumm10 = senior * countFactorYears;
+        System.out.println("1. Зарпалата за 10 років джун = " +juniorsumm10);
+        System.out.println("1.1 Зарпалата за 10 років мідл = " +middlesumm10);
+        System.out.println("1.2 Зарпалата за 10 років сеньйор = " +seniorsumm10);
+
+        // 2. Відняти 5% податку
+        double countFactorTax = 0.95;
+        int juniorAfterTaxes = (int) (juniorsumm10 * countFactorTax);
+        int middleAfterTaxes = (int) (middlesumm10 * countFactorTax);
+        int seniorAfterTaxes = (int) (seniorsumm10 * countFactorTax);
+        System.out.println("2. Після сплати 5% податку джун = " + juniorAfterTaxes);
+        System.out.println("2.1 Після сплати 5% податку мідл = " + middleAfterTaxes);
+        System.out.println("2.2 Після сплати 5% податку сеньйор = " + seniorAfterTaxes);
+
+        // 3. Порахувати середнє арифметичне за трьома сумами за 10 років
+        double avg = 3.0;
+        int avgAllempoyesWithouTax = (int) ((juniorsumm10 + middlesumm10 + seniorsumm10) / avg);
+        System.out.println("3. Порахувати середнє арифметичне за трьома сумами за 10 років = " +avgAllempoyesWithouTax);
+
+        // 3. Порахувати середнє арифметичне за трьома сумами за 10 років
+        int avgAllempoyesAfterTax = (int) ((juniorAfterTaxes + middleAfterTaxes + seniorAfterTaxes) / avg);
+        System.out.println("4. Вивести суми зарплат за 10 років з урахуванням вирахування податків та середнє арифм = "
+                + avgAllempoyesAfterTax);
+
 
     }
 }
