@@ -1,4 +1,4 @@
-package com.hiilel.lessons.lesson5.homework5;
+package com.hiilel.lessons.lesson5.homework6;
 
 import java.util.Scanner;
 
