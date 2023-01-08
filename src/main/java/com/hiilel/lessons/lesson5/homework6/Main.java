@@ -132,9 +132,9 @@ public class Main {
 
         double avg = 5.0;
 
-        int avgTeamOne = (int) ((firstPlayerTeamOne + secondPlayerTeamOne + thirdPlayerTeamOne
+        double avgTeamOne =  ((firstPlayerTeamOne + secondPlayerTeamOne + thirdPlayerTeamOne
                 + fourthPlayerTeamOne + fifthPlayerTeamOne) / avg);
-        int avgTeamTwo = (int) ((firstPlayerTeamTwo + secondPlayerTeamTwo + thirdPlayerTeamTwo
+        double avgTeamTwo = ((firstPlayerTeamTwo + secondPlayerTeamTwo + thirdPlayerTeamTwo
                 + fourthPlayerTeamTwo + fifthPlayerTeamTwo) / avg);
 
         System.out.println("AVG Team "+ nameFirstTeam + " = " + avgTeamOne);
