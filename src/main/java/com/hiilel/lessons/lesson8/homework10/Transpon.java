@@ -10,7 +10,7 @@ public class Transpon {
 //        int[][] array1 = new int[n][m];
 //        int[][] array2 = new int[m][n];
 
-        int[][] array = new int[5][5];
+        int[][] array = new int[-5][5];
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {

@@ -11,19 +11,30 @@ public class Main {
             System.out.println("Please enter value N");
             if (scanner.hasNextInt()) {
                 n = scanner.nextInt();
+                if (n <= 0) {
+                    System.out.println("Error: Please enter a positive value.");
+                    scanner.nextLine();
+                    continue;
+                }
                 break;
             } else {
                 System.out.println("Wrong data");
                 scanner.nextLine();
             }
         }
+        scanner.nextLine();
         while (true) {
             System.out.println("Please enter value M");
             if (scanner.hasNextInt()) {
                 m = scanner.nextInt();
+                if (m <= 0) {
+                    System.out.println("Error: Please enter a positive value.");
+                    scanner.nextLine();
+                    continue;
+                }
                 break;
             } else {
-                System.out.println("wrong data");
+                System.out.println("Wrong data");
                 scanner.nextLine();
             }
         }
