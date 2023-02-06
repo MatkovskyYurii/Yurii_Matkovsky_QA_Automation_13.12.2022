@@ -1,10 +1,10 @@
 package com.hiilel.lessons.Homework16.dealership;
 
-import com.hiilel.lessons.Homework16.intefaces.UsedCarPriceCounter;
+
 import com.hiilel.lessons.Homework16.abstractValues.Platform;
 import com.hiilel.lessons.Homework16.enams.Warranty;
 
-public final class Jeep extends Platform implements UsedCarPriceCounter {
+public final class Jeep extends Platform  {
 
     private final Warranty warranty;
 

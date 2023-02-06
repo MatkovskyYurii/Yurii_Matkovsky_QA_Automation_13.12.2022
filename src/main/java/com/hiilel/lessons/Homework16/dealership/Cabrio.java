@@ -1,10 +1,10 @@
 package com.hiilel.lessons.Homework16.dealership;
 
-import com.hiilel.lessons.Homework16.intefaces.UsedCarPriceCounter;
+
 import com.hiilel.lessons.Homework16.abstractValues.Platform;
 import com.hiilel.lessons.Homework16.enams.Warranty;
 
-public class Cabrio extends Platform implements UsedCarPriceCounter {
+public class Cabrio extends Platform  {
     private final Warranty warranty;
 
     public Cabrio(int price, String make, String model, Warranty warranty) {
