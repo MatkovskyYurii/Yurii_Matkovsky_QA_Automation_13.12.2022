@@ -2,18 +2,30 @@ package com.hiilel.lessons.lesson12.shop;
 
 import com.hiilel.lessons.lesson12.abstraction.BottleProduct;
 
+import java.util.Objects;
+
 public class Whiskey extends BottleProduct {
 
     private int years;
-    private String type;
+    private WhiskeyType type;
     // імплементація конструктора якщо ми створили його в super класі bottle і немає конструктора без параметрів
-    public Whiskey(int volume, String design, String manufacturer, double grade, int years, String type) {
+    public Whiskey(int volume, String design, String manufacturer, double grade, int years, WhiskeyType type) {
         super(volume, design, manufacturer, grade); // Силка на конструктор super Bottle
         this.years = years;
         this.type = type;
     }
 
-//       public Whiskey(int volume, String design, String manufacturer, double grade) {
+    public Whiskey(int volume, String design, String manufacturer, double grade, WhiskeyType type) {
+        super(volume, design, manufacturer, grade);
+        this.type = type;
+    }
+
+    public void setType(WhiskeyType type) {
+        this.type = type;
+    }
+
+
+    //       public Whiskey(int volume, String design, String manufacturer, double grade) {
 //        super(volume, design, manufacturer, grade);
 //    } // імплементація конструктора якщо ми створили його в super класі bottle і немає конструктора без параметрів
 //  void метод який нічого не повертає
@@ -41,4 +53,26 @@ public class Whiskey extends BottleProduct {
     // 1. Модифікатор доступу (protected -> public etc)
     // 2. Може змінюватись тип значення яке повертаємо Object -> String він звужується йде вниз (cast)
     // 3. Може змінюватись поведінка
+
+
+    @Override
+    public String toString() {
+        return "Whiskey{" +
+                "years=" + years +
+                ", type=" + type.toString() +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Whiskey whiskey = (Whiskey) o;
+        return years == whiskey.years && Objects.equals(type, whiskey.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(years, type);
+    }
 }

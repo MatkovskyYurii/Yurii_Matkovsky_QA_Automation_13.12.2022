@@ -1,5 +1,6 @@
-package com.hiilel.lessons.lesson15Exception;
+package com.hiilel.lessons.lesson15Exception.main;
 
+import java.io.FileNotFoundException;
 import java.util.Objects;
 
 public class Cat {

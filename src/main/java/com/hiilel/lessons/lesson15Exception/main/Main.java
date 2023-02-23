@@ -29,6 +29,8 @@ public class Main {
 
          */
         try { // Блок try туди записують потенційно небезпечний код який може мати помилки
+//            після того як ми отримали exception весь наступний код в блоці try не виконується
+//            але якщо exception не спрацює то виконується весь код блоку try
             int x = 10 / 0;
 //            / мульти-catch(багато кетчів) по ієрархії знизу до верху від child до
 //            потрібно їх ставити знизу до верху від child до super див таблицю ExceptionHierarchy
@@ -44,8 +46,11 @@ public class Main {
             System.out.println("RuntimeException");
         } catch (Exception e) {
             System.out.println("Exception");
-        } finally { // може його не бути , він виконується навіть якщо ми не зловили exception в catch
-//            System.exit(500); код зупинки finally (500 в дужках ми пишемо самі яку нам помилку потрібно)
+        } finally { // може його не бути , він виконується завжди
+            // і коли в нас кейс отримали  exception і коли його не було
+//            Як зупинити finally
+//            1. System.exit(500); в блоці try абщ catch
+//            код зупинки finally (500 в дужках ми пишемо самі яку нам помилку потрібно)
             System.out.println("block finally");
         }
         // finally не виконається якщо буде exception саме в ньому finally{ exception }
@@ -61,7 +66,7 @@ public class Main {
         throw new IOException();
     }
     /*
-    throw - викидує exception з методу
+    throw - викидує exception з методу щось на подобі return ви явно створюєте обєкт exception
     throws - даємо зрозуміти що private static IOException getException() він private і ми не знаємо
     про його реалізацію ми даємо зрозуміти через слово throws IOException що тут є такий exception
      */

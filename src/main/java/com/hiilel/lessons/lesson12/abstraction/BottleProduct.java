@@ -59,7 +59,7 @@ public abstract class BottleProduct {
         return grade;
     }
 
-    protected abstract Object getDescription();
+    public abstract Object getDescription();
 
 
 
