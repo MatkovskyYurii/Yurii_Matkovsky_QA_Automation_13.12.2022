@@ -1,9 +1,8 @@
 package com.hiilel.lessons.Homework17;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ProductMarket {
@@ -14,45 +13,42 @@ public class ProductMarket {
     }
 
     public List<String> getAllProductNames() {
-        List<String> productNames = new ArrayList<>();
-        for (Product product : products) {
-            productNames.add(product.getName());
-        }
-        return productNames;
+        return products
+                .stream()
+                .map(Product::getName)
+                .collect(Collectors.toList());
     }
 
     public List<String> getAllProductNamesSortedAlphabetically() {
         List<String> productNames = getAllProductNames();
-        Collections.sort(productNames);
-        return productNames;
+        return productNames
+                .stream()
+                .sorted()
+                .collect(Collectors.toList());
     }
 
     public List<Integer> getAllPricesGreaterThan10() {
-        List<Integer> prices = new ArrayList<>();
-        for (Product product : products) {
-            if (product.getPrice() > 10) {
-                prices.add(product.getPrice());
-            }
-        }
-        return prices;
+        return products
+                .stream()
+                .map(Product::getPrice)
+                .filter(p -> p > 10)
+                .collect(Collectors.toList());
     }
 
     public List<Integer> getAllPricesSmallerThan5() {
-        List<Integer> prices = new ArrayList<>();
-        for (Product product : products) {
-            if (product.getPrice() < 5) {
-                prices.add(product.getPrice());
-            }
-        }
-        return prices;
+        return products
+                .stream()
+                .map(Product::getPrice)
+                .filter(p -> p < 5)
+                .collect(Collectors.toList());
     }
 
     public List<String> getAllPricesAsString() {
-        List<String> prices = new ArrayList<>();
-        for (Product product : products) {
-            prices.add(String.valueOf(product.getPrice()));
-        }
-        return prices;
+        return products
+                .stream()
+                .map(Product::getPrice)
+                .map(Object::toString)
+                .collect(Collectors.toList());
     }
 
 

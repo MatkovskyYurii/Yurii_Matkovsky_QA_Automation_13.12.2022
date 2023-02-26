@@ -1,7 +1,7 @@
-package com.hiilel.lessons.Homework17;
-
+package com.hiilel.lessons.lesson19Java8.productmarket;
 
 public class Product {
+
     private String name;
     private int price;
 
@@ -34,4 +34,3 @@ public class Product {
                 '}';
     }
 }
-

@@ -8,12 +8,14 @@ public class Main {
 
         Product product1 = new Product("Cheese", 25);
         Product product2 = new Product("Mayo", 3);
-        Product product3 = new Product("Ham", 11);
+        Product product3 = new Product("Ham", 4);
+        Product product4 = new Product("Apple", 16);
 
         List<Product> list = new ArrayList<>();
         list.add(product1);
         list.add(product2);
         list.add(product3);
+        list.add(product4);
 
         ProductMarket productMarket = new ProductMarket(list);
 
