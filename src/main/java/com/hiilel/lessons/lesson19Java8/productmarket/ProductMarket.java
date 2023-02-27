@@ -25,7 +25,7 @@ public class ProductMarket {
     public List<String> getProductNames() {
         return products
                 .stream()
-                .map(p -> p.getName())
+                .map(Product::getName)
                 .collect(Collectors.toList());
     }
 
